@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Core.Migrations
 {
     /// <inheritdoc />
-    public partial class VehicleLicense : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,7 +51,7 @@ namespace Core.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Licenses",
+                name: "CarLicense",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -76,7 +76,21 @@ namespace Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Licenses", x => x.Id);
+                    table.PrimaryKey("PK_CarLicense", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LoginCredentials",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LoginCredentials", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -244,7 +258,10 @@ namespace Core.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Licenses");
+                name: "CarLicense");
+
+            migrationBuilder.DropTable(
+                name: "LoginCredentials");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

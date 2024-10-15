@@ -1,0 +1,172 @@
+﻿@{
+    ViewData["Title"] = "License";
+    Layout = "~/Views/Shared/_printPreviewLayout.cshtml";
+}
+
+
+<style>
+    body {
+        background-color: #f5f5f5;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .license-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 750px;
+        margin: 20px auto;
+        position: relative;
+        border: 2px solid #007bff;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+        .header img {
+            width: 120px;
+        }
+
+        .header h5 {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: black;
+        }
+
+    .details p {
+        margin: 5px 0;
+        line-height: 1.6;
+    }
+
+        .details p strong {
+            color: #007bff;
+        }
+
+    .blue-box-section {
+        text-align: right;
+        /*  background-image: url('arm1.jpg'); */
+        
+    }
+
+    .blue-box {
+        background-color: #f1faff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+        .blue-box p {
+            margin: 8px 0;
+            font-size: 13px;
+        }
+
+    .watermark {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.05;
+        z-index: -1;
+    }
+
+        .watermark img {
+            width: 300px;
+        }
+
+    .footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+    }
+
+    .license-container {
+       /*  background-image: url('/ajayilogo.png'); */
+        background-size: cover; /* Ensures the image covers the entire container "~/"~/ajayilogo.png" */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 750px;
+        margin: 20px auto;
+        position: relative;
+        border: 2px solid #007bff;
+        font-size: 14px;
+        color: #333;
+    }
+
+</style>
+<div class="license-container">
+    <div class="header">
+        <img src="~/ajayilogo.png" alt="Logo" />
+        <h5> Ajayi Crowther Vehicle License</h5>
+    </div>
+
+    <div class="row">
+        <!-- Left side details -->
+        <div class="col-md-8 details">
+            <p style="border-bottom:1px solid black;">
+                <strong>Date:</strong>@Model?.Date.ToString("d")
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>Owner's Name:</strong> @Model?.OwnerName
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>Address:</strong> @Model?.Address
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>File Number:</strong>@Model?.FileNo
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>Reg Number:</strong> @Model?.RegNo
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>Engine Number:</strong> @Model?.EngineNo
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>Chassis Number:</strong> @Model?.ChassisNo
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>Vehicle Make:</strong> @Model?.VehicleMake
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>Vehicle Model:</strong> @Model?.VehicleModel
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>Colour:</strong> @Model?.VehicleColor
+            </p>
+            <p style="border-bottom:1px solid black;">
+                <strong>License Fee:</strong> @Model?.LicenseFee
+            </p>
+        </div>
+
+        <!-- Right side blue box section -->
+        <div class="col-md-4 blue-box-section" style="background-image:url('arm1.jpg')">
+            <div class="blue-box">
+                <p><strong>PIN:</strong>@Model?.Pin</p>
+                <p><strong>Govt. Number:</strong>@Model?.GovtNo</p>
+                <p><strong>Transaction Date:</strong> @Model?.TransactionDate.ToString("d")</p>
+                <p><strong>Date Issued:</strong> @Model?.IssuedDate.ToString("d")</p>
+                <p><strong>Expiry Date:</strong> @Model?.ExpiryDate.ToString("d")</p>
+                <p><strong>SMS Fee:</strong>@Model?.SmsFee</p>
+                
+                <div>
+                    <img src="~/ajayilogo.png" style="width:25%; height:10%; vertical-align:middle; margin-right:49px;" alt="Logo" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="watermark">
+        <img src="~/images/ajayilogo.png" alt="Watermark" />
+    </div>
+</div>

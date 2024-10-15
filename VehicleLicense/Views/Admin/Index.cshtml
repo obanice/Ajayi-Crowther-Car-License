@@ -1,0 +1,88 @@
+﻿@using Core
+@using Core.Models
+@model IEnumerable<Core.Models.CarLicense>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+
+    body {
+        counter-reset: Serial;
+    }
+
+    tr td:first-child:before {
+        counter-increment: Serial;
+        content: counter(Serial);
+    }
+</style>
+<div class="page-content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">Dashboard</h2>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="block bg-white">
+            <div class="title text-center"><strong>License</strong></div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered bg-white">
+                    <thead>
+                        <tr class="bg-white">
+                            <th>S/N</th>
+                            <th>Owner</th>
+                            <th>Address</th>
+                            <th>Reg No</th>
+                            <th>Engine No</th>
+                            <th>Chassis No</th>
+                            <th>Make</th>
+                            <th>Color</th>
+                            <th>Model</th>
+                            <th>Transaction Date</th>
+                            <th>Issued Date</th>
+                            <th>Expiry Date</th>
+                            <th>License Fee</th>
+                            <th>Date</th>
+                            <th>Pin</th>
+                            <th>Govt No</th>
+                            <th>File No</th>
+                            <th>Sms Fee</th>
+                            <th class="text-right no-sort">Print</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            @foreach (var license in Model)
+                            {
+                                <tr class="bg-white">
+                                    <td></td>
+                                    <td>@license.OwnerName</td>
+                                    <td>@license.Address</td>
+                                    <td>@license.RegNo</td>
+                                    <td>@license.EngineNo</td>
+                                    <td>@license.ChassisNo</td>
+                                    <td>@license.VehicleMake</td>
+                                    <td>@license.VehicleColor</td>
+                                    <td>@license.VehicleModel</td>
+                                    <td>@license.TransactionDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@license.IssuedDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@license.ExpiryDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@license.LicenseFee</td>
+                                    <td>@license.Date.ToString("dd/MM/yyyy")</td>
+                                    <td>@license.Pin</td>
+                                    <td>@license.GovtNo</td>
+                                    <td>@license.FileNo</td>
+                                    <td>@license.SmsFee</td>
+                                    <td>
+                                        <a class="btn btn-primary" asp-action="Download" asp-controller="Admin" asp-route-licenseId="@license.Id">Print</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+﻿@model Core.ViewModels.LicenseViewModel
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-content pt-5">
+    <div class="container-fluid">
+        <div class="col-lg-8">
+            <div class="block">
+                <div class="title"><strong class="d-block">Add Licence</strong><span class="d-block">Page to add licence</span></div>
+                <div class="block-body">
+                    <form asp-controller="Admin" asp-action="SaveLicenseInfo" method="post">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="OwnerName"></label>
+                                    <input type="text" class="form-control" asp-for="OwnerName" placeholder="Enter Owner Name" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="Address"></label>
+                                    <input type="text" class="form-control" asp-for="Address" placeholder="Enter Address" required>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="RegNo"></label>
+                                    <input type="text" class="form-control" asp-for="RegNo" placeholder="Enter Registration Number" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="EngineNo"></label>
+                                    <input type="text" class="form-control" asp-for="EngineNo" placeholder="Enter Engine Number" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="ChassisNo"></label>
+                                    <input type="text" class="form-control" asp-for="ChassisNo" placeholder="Enter Chassis Number" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="VehicleMake"></label>
+                                    <input type="text" class="form-control" asp-for="VehicleMake" placeholder="Enter Vehicle Make" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class ="form-control-label" asp-for="VehicleColor"></label>
+                                    <input type="text" class="form-control" asp-for="VehicleColor" placeholder="Enter VehicleColor" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="VehicleModel"></label>
+                                    <input type="text" class="form-control" asp-for="VehicleModel" placeholder="Enter VehicleModel" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="TransactionDate"></label>
+                                    <input type="date" class="form-control" asp-for="TransactionDate" placeholder="Enter TransactionDate" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="IssuedDate"></label>
+                                    <input type="date" class="form-control" asp-for="IssuedDate" placeholder="Enter IssuedDate" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="ExpiryDate"></label>
+                                    <input type="date" class="form-control" asp-for="ExpiryDate" placeholder="Enter ExpiryDate" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="LicenseFee"></label>
+                                    <input type="number" class="form-control" asp-for="LicenseFee" placeholder="Enter LicenseFee" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="Date"></label>
+                                    <input type="date" class="form-control" asp-for="Date" placeholder="Enter Date" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="Pin"></label>
+                                    <input type="number" class="form-control" asp-for="Pin" placeholder="Enter Pin" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="GovtNo"></label>
+                                    <input type="text" class="form-control" asp-for="GovtNo" placeholder="Enter GovtNo" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" asp-for="FileNo"></label>
+                                    <input type="text" class="form-control" asp-for="FileNo" placeholder="Enter FileNo" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label class="form-control-label" asp-for="SmsFee"></label>
+                                <input type="number" class="form-control" asp-for="SmsFee" placeholder="Enter SmsFee" required>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,58 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+
+
+.offcanvas-static {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #E7E9EB;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1030;
+}
+
+    .offcanvas-static.hidden {
+        transform: translateX(-100%);
+    }
+
+.sidebar .offcanvas-body a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+    .sidebar .offcanvas-body a.active {
+        background-color: #ddd;
+    }
+.sidebar a:hover:not(.active) {
+    background-color: gray;
+    color: black;
+}
+.content container-fluid{
+    margin-right:130px !important;
+}
